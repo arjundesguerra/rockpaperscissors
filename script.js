@@ -1,3 +1,14 @@
+//div to display results
+const container = document.querySelector('#results');
+
+//p element for result of game
+const contentP = document.createElement('p');
+contentP.classList.add('contentP');
+container.appendChild(contentP);
+
+
+
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3) + 1;
     if (choice === 1) {
@@ -12,29 +23,32 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     pSelect = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
     if (pSelect == "Rock" && computerSelection == "Rock") {
-        return "You Tied! Rock ties with rock!";
+        contentP.textContent = "You Tied! Rock ties with rock!";
     } else if (pSelect == "Rock" && computerSelection == "Paper") {
-        return "You Lose! Paper beats rock!";
+        contentP.textContent = "You Lose! Paper beats rock!";
     } else if (pSelect == "Rock" && computerSelection == "Scissors") {
-        return "You Win! Rock beats scissors!";
+        contentP.textContent = "You Win! Rock beats scissors!";
     }
     
     if (pSelect == "Paper" && computerSelection == "Paper") {
-        return "You Tied! Paper ties with paper";
+        contentP.textContent = "You Tied! Paper ties with paper";
     } else if (pSelect == "Paper" && computerSelection == "Scissors") {
-        return "You Lose! Scissors beats paper!";
+        contentP.textContent = "You Lose! Scissors beats paper!";
     } else if (pSelect == "Paper" && computerSelection == "Rock") {
-        return "You Win! Paper beats rock!";
+        contentP.textContent = "You Win! Paper beats rock!";
     }
     
     if (pSelect == "Scissors" && computerSelection == "Scissors") {
-        return "You Tied! Scissors ties with scissors";
+        contentP.textContent = "You Tied! Scissors ties with scissors!";
     } else if (pSelect == "Scissors" && computerSelection == "Rock") {
-        return "You Lose! Rock beats scissors!";
+        contentP.textContent = "You Lose! Rock beats scissors!";
     } else if (pSelect == "Scissors" && computerSelection == "Paper") {
-        return "You Win! Scissors beats paper!";
+        contentP.textContent = "You Win! Scissors beats paper!";
     }
 }
+
+
+
 
 //event listener for buttons
 const btn1 = document.querySelector('#btn1');
